@@ -22,4 +22,43 @@ Model checkpoints are hosted on Google Drive:
 https://drive.google.com/drive/folders/XXXXXXXXXXXX  
 
 The Drive contains the following folders:
+cuhk03/
+dukemtmcreid/
+market1501/
+msmt17/
+
+
+### ➤ Place the weights inside: 
+log/AaP-ReID
+
+## 📂 Dataset Setup
+
+Supported datasets:
+
+- Market1501  
+- DukeMTMC-reID  
+- CUHK03  
+- MSMT17  
+
+Download each dataset manually and store them in:
+/data
+
+## 🛠 Installation
+
+Install all required Python packages:
+
+```bash
+pip install -r requirements.txt
+
+### ➤ Train: 
+python Train.py --config configs/train_market1501.yaml
+
+### ➤ Eval: 
+python Train.py --config configs/train_market1501.yaml
+
+
+## Acknowledgements
+This implementation is built upon the AlignedReID++ framework  
+(https://github.com/michuanhaohao/AlignedReID).
+
 
