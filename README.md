@@ -1,32 +1,25 @@
 # Towards Attention-Aware Person Re-Identification
 
-
-
-<p align="center">
-  <img src="/models/Architecture-updated.png" width="650">
-</p>
+![Figure 1](/assets/Architecture-updated.png)
 
 
 
 ---
-
 ## 🔗 Pretrained Weights
-
-Model checkpoints are hosted on Google Drive:
-
-**Download Weights:**  
-https://drive.google.com/drive/folders/1ZYfZHCmOmi52udcGZgKKNBuPCMuGX8ra?usp=sharing  
-
+Model checkpoints are hosted on: [Google Drive](https://drive.google.com/drive/folders/1ZYfZHCmOmi52udcGZgKKNBuPCMuGX8ra?usp=sharing)  
 The drive contains the following folders:
+<pre>
+cuhk03/model_best.pth
+dukemtmcreid/model_best.pth
+market1501/model_best.pth
+msmt17/model_best.pth
+</pre>
 
-<br>cuhk03/
-<br>dukemtmcreid/
-<br>market1501/
-<br>msmt17/
 
-
-**Place the weights inside** 
-<br>log/AaP-ReID
+**Place the weights inside (/log/AaP-ReID)** 
+<pre>
+cd /AaP-ReID/log/AaP-ReID
+</pre>
 <br>The directory tree should look like:
 
 <pre>
@@ -46,17 +39,17 @@ The drive contains the following folders:
 ## 🔗 Dataset Setup
 
 **Supported datasets**
+<pre>
+Market1501  
+DukeMTMC-reID  
+CUHK03  
+MSMT17
+</pre>  
 
-- Market1501  
-- DukeMTMC-reID  
-- CUHK03  
-- MSMT17  
-
-**Download Datasets**  
-https://drive.google.com/drive/folders/1ZYfZHCmOmi52udcGZgKKNBuPCMuGX8ra?usp=sharing  
-
-Store the reID datasets under /data <br> 
-cd AaP-ReID/data
+**Download Datasets:**  [Google Drive](https://drive.google.com/drive/folders/1G5BPzyasTjzA0lxZ1NZmjFkfRbGHjPUh?usp=sharing) and store them inside (/AaP-ReID/data)
+<pre>
+  cd /AaP-ReID/data
+</pre>
 
 <pre>
   data/
@@ -87,14 +80,12 @@ cd AaP-ReID/data
     ├── list_query.txt
     ├── list_gallery.txt
     └── ...
-
 </pre>
+
 
 ## 🔗 Installation
 
 Install all required Python packages:
-
-
 <pre>
   pip install -r requirements.txt
 </pre>
@@ -107,12 +98,16 @@ to change dataset use (-d cuhk03, -d msmt17, -d dukemtmcreid)
   python3 Train.py  -d market1501 -a resnet50 --test_distance global_local --labelsmooth
 </pre>
 
-
 **Eval** 
 <pre>
   python3 Train.py -d market1501 -a resnet50 --evaluate --resume /AaP-ReID/market1501/best_model.pth.tar --save-dir /AaP-ReID/log/eval --test_distance global_local --labelsmooth
 </pre>
 
+![Table 2](/assets/Aap-ReID-Table1.png)
 
+<p align="center">
+  <img src="/assets/Aap-ReID-Figure1.png" alt="Figure 1" width="45%" />
+  <img src="/assets/Aap-ReID-Table2.png" alt="Table 1" width="45%" />
+</p>
 
 
